@@ -25,7 +25,7 @@ const PORT = 4000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://ecommerce-vizo.vercel.app"],
     methods: ["GET", "PUT", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
