@@ -29,7 +29,7 @@ const createOrder = async (req, res) => {
       totalAmount,
       orderDate,
       orderUpdateDate,
-      paymentId: "",
+      paymentId: "", 
       payerId: "",
     });
 
@@ -41,9 +41,9 @@ const createOrder = async (req, res) => {
         payment_method: "paypal",
       },
       redirect_urls: {
-        return_url: `https://e-commerce-backend-9rj8.onrender.com/shop/paypal-return?orderId=${newlyCreatedOrder._id}`,
+        return_url: `https://e-commerce-backend-9rj8.onrender.com/api/shop/paypal-return?orderId=${newlyCreatedOrder._id}`,
         cancel_url:
-          "https://e-commerce-backend-9rj8.onrender.com/shop/paypal-cancel",
+          "https://e-commerce-backend-9rj8.onrender.com/api/shop/paypal-cancel",
       },
       transactions: [
         {
@@ -80,7 +80,7 @@ const createOrder = async (req, res) => {
         res.status(201).json({
           success: true,
           approvalURL,
-          orderId: newlyCreatedOrder._id,
+          orderId: newlyCreatedOrder._id, 
         });
       }
     });
@@ -92,6 +92,7 @@ const createOrder = async (req, res) => {
     });
   }
 };
+
 
 const capturePayment = async (req, res) => {
   try {
