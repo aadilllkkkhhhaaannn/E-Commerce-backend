@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://e-commerce-backend-9rj8.onrender.com/",
+    origin: "http://localhost:5173",
     methods: ["GET", "PUT", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
