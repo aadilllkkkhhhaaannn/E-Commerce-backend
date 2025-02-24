@@ -2,7 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const connectDB = require("../Config/db_Config");
+// const connectDB = require("./Config/db_Config");
 
 // routes
 
@@ -16,12 +16,12 @@ const shopOrderRouter = require("./routets/shop/orders-routes");
 const shopSearchRouter = require("./routets/shop/search-routes");
 const shopReviewRouter = require("./routets/shop/review-routes");
 const commonFeatureRouter = require("./routets/common/features-routes");
+const connectDB = require("./Config/db_config");
 
 // connect database
 
-connectDB();
-
 const app = express();
+connectDB();
 const PORT = process.env.PORT || 5000;
 
 app.use(
